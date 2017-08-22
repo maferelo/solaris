@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'production') {
   output = {
     path: resolve('saleor/static/assets/'),
     filename: '[name].[chunkhash].js',
-    publicPath: 'https://s3-sa-east-1.amazonaws.com/galorem-static/assets/'
+    publicPath: 'https://s3-sa-east-1.amazonaws.com/solaris-static/assets/'
     //publicPath: 'https://saleor-demo.s3.amazonaws.com/assets/'
   };
   fileLoaderPath = 'file?name=[name].[hash].[ext]';
