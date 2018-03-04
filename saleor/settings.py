@@ -150,6 +150,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.auth',
     'django.contrib.postgres',
+    'django.contrib.gis',
     'django.forms',
 
     # Local apps
@@ -164,6 +165,10 @@ INSTALLED_APPS = [
     'saleor.dashboard',
     'saleor.shipping',
     'saleor.search',
+
+    'saleor.landing',
+    'saleor.store',
+
     'saleor.site',
     'saleor.data_feeds',
 
@@ -174,6 +179,7 @@ INSTALLED_APPS = [
     'django_prices',
     'django_prices_openexchangerates',
     'graphene_django',
+    'mapwidgets',
     'mptt',
     'payments',
     'webpack_loader',
@@ -402,3 +408,13 @@ SOCIAL_AUTH_USER_MODEL = AUTH_USER_MODEL
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
     'fields': 'id, email'}
+
+MAP_WIDGETS = {
+    "GooglePointFieldWidget": (
+        ("zoom", 14),
+        ("mapCenterLocationName", "Medellin"),
+        ("GooglePlaceAutocompleteOptions", {'componentRestrictions': {'country': 'co'}}),
+        ("markerFitZoom", 15),
+    ),
+    "GOOGLE_MAP_API_KEY": "AIzaSyCpyrkJBCBG1xmCMmmpDFRFdBzLCwg8hf0"
+}

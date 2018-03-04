@@ -1,7 +1,7 @@
 .footer {
-  background-color: $gray;
+  background-color: $dark-white;
   padding: $global-padding * 2 0;
-  margin-top: $global-margin * 8;
+  margin-top: $global-margin * 1;
   @include media-breakpoint-down(xs) {
     text-align: center;
   }
@@ -20,7 +20,11 @@
     list-style: none;
     padding-left: 0;
     a {
-      color: $white;
+      color: $light-gray;
+      line-height: 2;
+    }
+    h2 {
+      color: $gray;
       line-height: 2;
     }
   }
@@ -38,6 +42,6 @@
 
 .maincontent {
   @include media-breakpoint-down(sm) {
-    margin-top: $global-margin * 7;
+    margin-top: $global-margin * 0;
   }
 }

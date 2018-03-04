@@ -1,0 +1,24 @@
+{% load bootstrap_form from bootstrap3 %}
+{% load i18n %}
+{% load staticfiles %}
+
+<form method="post" action="{% url 'landing_urls:landing_encuesta' %}" novalidate>
+  {% csrf_token %}
+  <fieldset>
+    {% bootstrap_form form %}
+    {% if redirect_field_value %}
+      <input type="hidden" name="next" name="{{ redirect_field_name }}"
+             value="{{ redirect_field_value }}"/>
+    {% endif %}
+  </fieldset>
+  <div class="row login__btn-group">
+    <div class="col-sm-12">
+      <h6>Mas información: manuel.restrepo@eia.edu.co</h6>
+      <button class="btn primary narrow">
+        Finalizar
+      </button>
+      <br>
+      <br>
+    </div>
+  </div>
+</form>

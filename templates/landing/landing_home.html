@@ -1,0 +1,177 @@
+{% extends "landing_base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}OMIBUS — {{ block.super }}{% endblock %}
+
+{% block content %}
+
+    <div class="landing">
+      <div class="row">
+        <div class="col-sm-12 landing__block1">
+          <div class="landing--square">
+            <div class="landing--content">
+              <div class="landing--content-wrapper">
+                <div class="landing--content-inner">
+                  <div  class="row align-items-center">
+                    <div  class="col-sm-1"></div>
+                    <div  class="col-md-4">
+                      <h2>
+                        OMIBUS sera el único servicio puerta a puerta de minibuses que te promete viajar más rápido y seguro a tu oficina o estudio, disminuir tu estrés, proteger el medio ambiente y mejorar la congestión de Medellín
+                      </h2>
+                    </div>
+                    <div  class="col-md-5">
+                      <a class="btn btn-secondary landing__button" href="{% url "landing_urls:landing_encuesta" %}">
+                            Toma la encuesta
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 nopadding landing__block2">
+          <div class="landing--square">
+            <div class="landing--content">
+              <div class="landing--content-wrapper">
+                <div class="landing--content-inner">
+                  <div  class="row">
+                    <div  class="col-md-3"></div>
+                    <div  class="col-md-6">
+                      <h1>Comunidad con corazón</h1>
+                      <br>
+                      <h2>
+                        Comparte, disfruta, crece, como en el colegio y siempre disfrutando de las más altas comodidades y experimentando el servicio VIP de vehículos y conductores certificados
+                      </h2>
+                    </div>
+                    <div  class="col-md-3"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 landing__block3">
+          <div class="landing--square">
+            <div class="landing--content">
+              <div class="landing--content-wrapper">
+                <div class="landing--content-inner align-middle">
+                  <h1>{% trans "Rápido" context "Landing reasons" %}</h1>
+                  <br>
+                  <img src="{% static "images/land3_fast_portrait.png" %}" class="d-block mx-auto img-fluid" />
+                  <br>
+                  <div class="logos">
+                    <i class="fas fa-stopwatch fa-2x"></i>
+                    <i class="fas fa-street-view fa-2x"></i>
+                  </div>
+                  <hr>
+                  <h2>
+                    Nuestra tecnología de vanguardia utiliza datos de tráfico en tiempo real para brindarte la ruta más rápida en todo momento
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 landing__block4">
+          <div class="landing--square">
+            <div class="landing--content">
+              <div class="landing--content-wrapper">
+                <div class="landing--content-inner">
+                  <h1>{% trans "Cómodo" context "Lan/ding reasons" %}</h1>
+                  <br>
+                  <img src="{% static "images/land4_confty_portrait.png" %}" class="d-block mx-auto img-fluid" />
+                  <br>
+                  <div class="logos">
+                    <i class="fas fa-wifi fa-2x"></i>
+                    <i class="fas fa-snowflake fa-2x"></i>
+                    <i class="fas fa-umbrella fa-2x"></i>
+                  </div>
+                  <hr>
+                  <h2>
+                    Un asiento para ti con WIFI, aire acondicionado, sombrillas y todo lo que pudieras necesitar...
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 landing__block5">
+          <div class="landing--square">
+            <div class="landing--content">
+              <div class="landing--content-wrapper">
+                <div class="landing--content-inner align-middle">
+                  <h1>{% trans "Verde" context "Landing reasons" %}</h1>
+                  <br>
+                  <img src="{% static "images/land5_green_portrait.png" %}" class="d-block mx-auto img-fluid" />
+                  <br>
+                  <i class="fas fa-leaf fa-2x"></i>
+                  <hr>
+                  <h2>
+                    Despues de todo, por cada van son hasta 15 vehiculos que dejan de circular, lo suficiente para
+                    salvar 1830 árboles anualmente según la EPA
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 landing__block6">
+          <div class="landing--square">
+            <div class="landing--content">
+              <div class="landing--content-wrapper">
+                <div class="landing--content-inner">
+                  <h1>{% trans "Confiable" context "Landing reasons" %}</h1>
+                  <br>
+                  <img src="{% static "images/land6_confi_portrait.png" %}" class="d-block mx-auto img-fluid" />
+                  <br>
+                  <i class="fas fa-star fa-2x"></i>
+                  <i class="fas fa-star fa-2x"></i>
+                  <i class="fas fa-star fa-2x"></i>
+                  <i class="fas fa-star fa-2x"></i>
+                  <i class="fas fa-star fa-2x"></i>
+                  <hr>
+                  <h2>
+                    Tu opinión es lo más importante, al evaluar directamente el servicio desde
+                    la app garantizamos tu satisfacción
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 nopadding landing__block7">
+          <div class="landing--square">
+            <div class="landing--content">
+              <div class="landing--content-wrapper">
+                <div class="landing--content-inner">
+                  <div  class="row">
+                    <div  class="col-md-1"></div>
+                    <div  class="col-md-4 col-sm-12">
+                      <h2>
+                        No más alertas por contaminación, no más enfermedades respiratorias. Medellín merece Aire puro y con tu ayuda lo podemos lograr. Ya puedes hacer algo al respecto, participa para crear un mejor entorno para todos tus seres queridos
+                      </h2>
+                      <a class="btn btn-secondary landing__button" href="{% url "landing_urls:landing_encuesta" %}">
+                            Participa acá
+                      </a>
+                    </div>
+                    <div  class="col-md-5"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

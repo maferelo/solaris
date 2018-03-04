@@ -1,13 +1,15 @@
 // GLOBAL
 $global-padding: 1rem;
-$global-margin: 1rem;
+$global-margin: 0.75rem;
 $button-border-radius: 4px;
 
 // COLORS
-$body-color: #333333;
+$body-color: #fff;
 $white: #fff;
-$light-gray: #f2f2f2;
-$gray: #D3D1D0;
+$dark-white: #f2f2f2;
+$light-white: #555;
+$light-gray: #555;
+$gray: #333;
 $darken-gray: darken($gray, 10%);
 $skull-gray: #828282;
 $blue: #26A5D4;

@@ -18,6 +18,9 @@ from .registration.urls import urlpatterns as registration_urls
 from .search.urls import urlpatterns as search_urls
 from .userprofile.urls import urlpatterns as userprofile_urls
 
+from .landing.urls import urlpatterns as landing_urls
+from .store.urls import urlpatterns as store_urls
+
 urlpatterns = [
     url(r'^', include(core_urls)),
     url(r'^account/', include(registration_urls)),
@@ -30,6 +33,10 @@ urlpatterns = [
     url(r'^products/', include(product_urls, namespace='product')),
     url(r'^profile/', include(userprofile_urls, namespace='profile')),
     url(r'^search/', include(search_urls, namespace='search')),
+
+    url(r'^landing/', include(landing_urls, namespace='landing_urls')),
+    url(r'^store/', include(store_urls, namespace='store_urls')),
+
     url(r'^feeds/', include(feed_urls, namespace='data_feeds')),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),

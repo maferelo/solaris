@@ -17,7 +17,7 @@
       display: table-cell;
       text-align: center;
       vertical-align: middle;
-      color: white;
+      color: $white;
       padding-left: $global-padding;
       padding-right: $global-padding;
   }
@@ -38,6 +38,7 @@
     }
   }
   &__block1 {
+    margin-top: $global-margin * 1;
     .home--square {
       background-image: url('../images/block1.jpg');
       @include media-breakpoint-up(md) {
@@ -48,13 +49,49 @@
     }
   }
   &__block2 {
-    margin-top: $global-margin * 2;
+    margin-top: $global-margin * 1;
     .home--square {
       background-image: url('../images/block2.jpg');
     }
   }
   &__block3 {
-    margin-top: $global-margin * 2;
+    margin-top: $global-margin * 1;
+    .home--square {
+      background-image: url('../images/block3.jpg');
+    }
+  }
+  &__block4 {
+    margin-top: $global-margin * 1;
+    .home--square {
+      background-image: url('../images/block3.jpg');
+    }
+  }
+  &__block5 {
+    margin-top: $global-margin * 1;
+    .home--square {
+      background-image: url('../images/block3.jpg');
+    }
+  }
+  &__block6 {
+    margin-top: $global-margin * 1;
+    .home--square {
+      background-image: url('../images/block3.jpg');
+    }
+  }
+  &__block7 {
+    margin-top: $global-margin * 1;
+    .home--square {
+      background-image: url('../images/block3.jpg');
+    }
+  }
+  &__block8 {
+    margin-top: $global-margin * 1;
+    .home--square {
+      background-image: url('../images/block3.jpg');
+    }
+  }
+  &__block9 {
+    margin-top: $global-margin * 1;
     .home--square {
       background-image: url('../images/block3.jpg');
     }
