@@ -38,7 +38,7 @@ GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgis://saleor:saleor@localhost:5432/saleor',
+        default='postgres://saleor:saleor@localhost:5432/saleor',
         conn_max_age=600)}
 
 
