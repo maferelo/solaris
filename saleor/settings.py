@@ -299,6 +299,10 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split()
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+
+
 # Amazon S3 configuration
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
