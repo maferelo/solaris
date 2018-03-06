@@ -79,7 +79,7 @@ class Encuesta(models.Model):
         validators=[MinValueValidator(1),
                     MaxValueValidator(24)])
     t_salida_lunes = models.IntegerField(
-        'Hora de entrada - Lunes (opcional)',
+        'Hora de salida - Lunes (opcional)',
         blank=True,
         validators=[MinValueValidator(1),
                     MaxValueValidator(24)])
@@ -89,7 +89,7 @@ class Encuesta(models.Model):
         validators=[MinValueValidator(1),
                     MaxValueValidator(24)])
     t_salida_martes = models.IntegerField(
-        'Hora de entrada - Martes (opcional)',
+        'Hora de salida - Martes (opcional)',
         blank=True,
         validators=[MinValueValidator(1),
                     MaxValueValidator(24)])
@@ -99,7 +99,7 @@ class Encuesta(models.Model):
         validators=[MinValueValidator(1),
                     MaxValueValidator(24)])
     t_salida_miercoles = models.IntegerField(
-        'Hora de entrada - Miércoles (opcional)',
+        'Hora de salida - Miércoles (opcional)',
         blank=True,
         validators=[MinValueValidator(1),
                     MaxValueValidator(24)])
@@ -109,7 +109,7 @@ class Encuesta(models.Model):
         validators=[MinValueValidator(1),
                     MaxValueValidator(24)])
     t_salida_jueves = models.IntegerField(
-        'Hora de entrada - Jueves (opcional)',
+        'Hora de salida - Jueves (opcional)',
         blank=True,
         validators=[MinValueValidator(1),
                     MaxValueValidator(24)])
@@ -119,7 +119,7 @@ class Encuesta(models.Model):
         validators=[MinValueValidator(1),
                     MaxValueValidator(24)])
     t_salida_viernes = models.IntegerField(
-        'Hora de entrada - Viernes (opcional)',
+        'Hora de salida - Viernes (opcional)',
         blank=True,
         validators=[MinValueValidator(1),
                     MaxValueValidator(24)])
