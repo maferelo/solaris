@@ -70,6 +70,10 @@
           padding-top: 40%;
         }
       }
+      @include media-breakpoint-down(md) {
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
     }
   }
   &__block2 {
@@ -80,6 +84,10 @@
         &:before {
           padding-top: 40%;
         }
+      }
+      @include media-breakpoint-down(md) {
+        background-repeat: no-repeat;
+        background-position: center center;
       }
     }
   }
@@ -97,6 +105,10 @@
     }
     .landing--square {
       background-image: url('../images/land3_fast.jpg');
+      @include media-breakpoint-down(md) {
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
     }
   }
   &__block4 {
@@ -113,6 +125,10 @@
     }
     .landing--square {
       background-image: url('../images/land4_confty.jpg');
+      @include media-breakpoint-down(md) {
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
     }
   }
   &__block5 {
@@ -129,6 +145,10 @@
     }
     .landing--square {
       background-image: url('../images/land5_green.png');
+      @include media-breakpoint-down(md) {
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
     }
   }
   &__block6 {
@@ -155,6 +175,10 @@
         &:before {
           padding-top: 40%;
         }
+      }
+      @include media-breakpoint-down(md) {
+        background-repeat: no-repeat;
+        background-position: center center;
       }
     }
   }
