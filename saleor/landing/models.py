@@ -143,7 +143,7 @@ class Encuesta(models.Model):
                     MaxValueValidator(24)])
 
     preferencia_1 = models.CharField(
-        "¿Con cual de las siguientes opciones te sientes mas comod@? Valores típicos de un viaje al centro",
+        "¿Con cual de las siguientes opciones te sientes mas comod@? Valores típicos de un trayecto al centro",
         max_length=2,
         choices=PREFERENCIAS_1_CHOICES,
         default='BU'
