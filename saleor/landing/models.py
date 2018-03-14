@@ -41,6 +41,24 @@ class Encuesta(models.Model):
         ('CA', 'Caminando'),
     )
 
+    PREFERENCIAS_1_CHOICES = (
+        ('BU', 'Bus - $2100, 50min'),
+        ('OM', 'Omibus - $3000, 35min'),
+        ('PA', 'Automovil particular - $5000, 30min'),
+    )
+
+    PREFERENCIAS_2_CHOICES = (
+        ('BU', 'Bus - $2100, 50min'),
+        ('OM', 'Omibus - $3500, 30min'),
+        ('PA', 'Automovil particular - $5000, 30min'),
+    )
+
+    PREFERENCIAS_3_CHOICES = (
+        ('BU', 'Bus - $2100, 50min'),
+        ('OM', 'Omibus - $4000, 25min'),
+        ('PA', 'Automovil particular - $5000, 30min'),
+    )
+
     edad = models.IntegerField(
         'edad',
         validators=[MinValueValidator(4),
@@ -124,9 +142,26 @@ class Encuesta(models.Model):
         validators=[MinValueValidator(1),
                     MaxValueValidator(24)])
 
-    preferencia = models.BooleanField(
-        "¿Utilizarias este producto?",
-        choices=TRUE_FALSE_CHOICES, default=True)
+    preferencia_1 = models.CharField(
+        "¿Con cual de las siguientes opciones te sientes mas comod@? Valores típicos de un viaje al centro",
+        max_length=2,
+        choices=PREFERENCIAS_1_CHOICES,
+        default='BU'
+    )
+
+    preferencia_2 = models.CharField(
+        "¿Con cual de las siguientes opciones te sientes mas comod@?",
+        max_length=2,
+        choices=PREFERENCIAS_2_CHOICES,
+        default='BU'
+    )
+
+    preferencia_3 = models.CharField(
+        "¿Con cual de las siguientes opciones te sientes mas comod@?",
+        max_length=2,
+        choices=PREFERENCIAS_3_CHOICES,
+        default='BU'
+    )
 
     correo = models.EmailField(
         'email (opcional)', blank=True, unique=True)

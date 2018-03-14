@@ -37,7 +37,9 @@ class EncuestaForm(forms.ModelForm):
             "t_salida_jueves",
             "t_entrada_viernes",
             "t_salida_viernes",
-            "preferencia",
+            "preferencia_1",
+            "preferencia_2",
+            "preferencia_3",
             "correo",
             "sugerencias")
         widgets = {
@@ -58,6 +60,8 @@ class EncuestaForm(forms.ModelForm):
             't_salida_jueves': forms.TextInput(attrs={'placeholder': 'ej. 17'}),
             't_entrada_viernes': forms.TextInput(attrs={'placeholder': 'ej. 7'}),
             't_salida_viernes': forms.TextInput(attrs={'placeholder': 'ej. 17'}),
-            'preferencia': forms.RadioSelect(),
+            'preferencia_1': forms.RadioSelect(attrs={'display': 'inline-block'}),
+            'preferencia_2': forms.RadioSelect(attrs={'display': 'inline-block'}),
+            'preferencia_3': forms.RadioSelect(attrs={'display': 'inline-block'}),
             'sugerencias': forms.Textarea(attrs={'placeholder': 'Tu opinion es muy valiosa'}),
         }
