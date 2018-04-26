@@ -92,55 +92,35 @@ class Encuesta(models.Model):
         help_text="A donde llegas")
 
     t_entrada_lunes = models.IntegerField(
-        'Hora de entrada - Lunes (opcional)',
-        blank=True,
-        validators=[MinValueValidator(1),
-                    MaxValueValidator(24)])
+        'Hora de entrada - Lunes',
+        blank=True, null=True)
     t_salida_lunes = models.IntegerField(
-        'Hora de salida - Lunes (opcional)',
-        blank=True,
-        validators=[MinValueValidator(1),
-                    MaxValueValidator(24)])
+        'Hora de salida - Lunes',
+        blank=True, null=True)
     t_entrada_martes = models.IntegerField(
         'Hora de entrada - Martes (opcional)',
-        blank=True,
-        validators=[MinValueValidator(1),
-                    MaxValueValidator(24)])
+        blank=True, null=True)
     t_salida_martes = models.IntegerField(
         'Hora de salida - Martes (opcional)',
-        blank=True,
-        validators=[MinValueValidator(1),
-                    MaxValueValidator(24)])
+        blank=True, null=True)
     t_entrada_miercoles = models.IntegerField(
         'Hora de entrada - Miércoles (opcional)',
-        blank=True,
-        validators=[MinValueValidator(1),
-                    MaxValueValidator(24)])
+        blank=True, null=True)
     t_salida_miercoles = models.IntegerField(
         'Hora de salida - Miércoles (opcional)',
-        blank=True,
-        validators=[MinValueValidator(1),
-                    MaxValueValidator(24)])
+        blank=True, null=True)
     t_entrada_jueves = models.IntegerField(
         'Hora de entrada - Jueves (opcional)',
-        blank=True,
-        validators=[MinValueValidator(1),
-                    MaxValueValidator(24)])
+        blank=True, null=True)
     t_salida_jueves = models.IntegerField(
         'Hora de salida - Jueves (opcional)',
-        blank=True,
-        validators=[MinValueValidator(1),
-                    MaxValueValidator(24)])
+        blank=True, null=True)
     t_entrada_viernes = models.IntegerField(
         'Hora de entrada - Viernes (opcional)',
-        blank=True,
-        validators=[MinValueValidator(1),
-                    MaxValueValidator(24)])
+        blank=True, null=True)
     t_salida_viernes = models.IntegerField(
         'Hora de salida - Viernes (opcional)',
-        blank=True,
-        validators=[MinValueValidator(1),
-                    MaxValueValidator(24)])
+        blank=True, null=True)
 
     preferencia_1 = models.CharField(
         "¿Con cual de las siguientes opciones te sientes mas comod@? Valores típicos de un trayecto al centro",
@@ -164,10 +144,16 @@ class Encuesta(models.Model):
     )
 
     correo = models.EmailField(
-        'email (opcional)', blank=True, unique=True)
+        'email (opcional)', blank=True, null=True)
     sugerencias = models.TextField(
         'sugerencias (opcional)', blank=True)
 
     def __unicode__(self):
         return self.salida
+
+
+class Routes(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    assigment = models.FileField(upload_to='assigments/')
 
