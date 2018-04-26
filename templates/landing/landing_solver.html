@@ -1,0 +1,42 @@
+{% extends "landing_base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}Encuesta — {{ block.super }}{% endblock %}
+
+{% block extrahead %}
+    {{ form.media }}
+
+    <script type="text/javascript">
+        $(document).on("google_point_map_widget:marker_create", function (e, lat, lng, locationInputElem, mapWrapID) {
+            console.log(locationInputElem); // django widget textarea widget (hidden)
+            console.log(lat, lng); // created marker coordinates
+            console.log(mapWrapID); // map widget wrapper element ID
+        });
+        $(document).on("google_point_map_widget:marker_change", function (e, lat, lng, locationInputElem, mapWrapID) {
+            console.log(locationInputElem); // django widget textarea widget (hidden)
+            console.log(lat, lng);  // changed marker coordinates
+            console.log(mapWrapID); // map widget wrapper element ID
+        });
+        $(document).on("google_point_map_widget:marker_delete", function (e, lat, lng, locationInputElem, mapWrapID) {
+            console.log(locationInputElem); // django widget textarea widget (hidden)
+            console.log(lat, lng);  // deleted marker coordinates
+            console.log(mapWrapID); // map widget wrapper element ID
+        });
+    </script>
+{% endblock extrahead %}
+
+{% block content %}
+
+  <div class="col-lg-10 col-sm-12 m-auto">
+    <div class="row encuesta">
+      <div class="col-md-12 landing__inner">
+        <br>
+        <h1 class="text-center">OMIBUS - Rutas</h1>
+        {{ routes }}
+        <br>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
