@@ -17,6 +17,44 @@ class CityCreateForm(forms.ModelForm):
 
 class EncuestaForm(forms.ModelForm):
 
+    def clean(self):
+        form_data = self.cleaned_data
+
+        if form_data["desde"] == form_data["hasta"]:
+            raise forms.ValidationError(
+                "Los lugares deben ser diferentes")
+
+        entradas = [
+            form_data["t_entrada_lunes"],
+            form_data["t_entrada_martes"],
+            form_data["t_entrada_miercoles"],
+            form_data["t_entrada_jueves"],
+            form_data["t_entrada_viernes"]]
+
+        salidas = [
+            form_data["t_salida_lunes"],
+            form_data["t_salida_martes"],
+            form_data["t_salida_miercoles"],
+            form_data["t_salida_jueves"],
+            form_data["t_salida_viernes"]]
+
+        tiempos = zip(entradas, salidas)
+        tiempos = [ts for ts in tiempos if all(ts)]
+        if not tiempos:
+            raise forms.ValidationError(
+                "Favor ingresar almenos un horario")
+        else:
+            for ts in tiempos:
+                if ts[0] > 24 or ts[1] > 24:
+                    raise forms.ValidationError(
+                        "Hora debe ser menor a 24")
+                elif ts[0] < 0 or ts[1] < 0:
+                    raise forms.ValidationError(
+                        "Hora debe ser menor a 24")
+                elif ts[0] >= ts[1]: \
+                    raise forms.ValidationError(
+                        "t debe ser menor a t salida")
+
     class Meta:
         model = Encuesta
         fields = (
