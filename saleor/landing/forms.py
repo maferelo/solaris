@@ -3,7 +3,6 @@ from mapwidgets.widgets import GooglePointFieldWidget
 
 from .models import City, Encuesta
 
-
 class CityCreateForm(forms.ModelForm):
 
     class Meta:
@@ -19,6 +18,10 @@ class EncuestaForm(forms.ModelForm):
 
     def clean(self):
         form_data = self.cleaned_data
+
+        if not form_data.get("desde") or not form_data.get("hasta"):
+            raise forms.ValidationError(
+                "Ingresar ubicacion de salida y de llegada")
 
         if form_data["desde"] == form_data["hasta"]:
             raise forms.ValidationError(
