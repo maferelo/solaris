@@ -17,8 +17,10 @@ def landing_home(request):
 
 
 def landing_encuesta(request):
+    logger.info(request.POST)
     form = EncuestaForm(request.POST or None)
     if form.is_valid():
+        logger.info(form.cleaned_data)
         form.save()
         return redirect('landing_urls:landing_home')
     return TemplateResponse(
@@ -35,5 +37,9 @@ def landing_solver(request):
         request, 'landing/landing_solver.html',
         {'parent': None,
          'routes': routes})
+
+
+{'t_salida_viernes': None, 't_salida_martes': None, 't_entrada_lunes': 7, 't_entrada_jueves': None, 't_entrada_miercoles': None, 'correo': None, 'preferencia_2': 'BU', 't_salida_miercoles': None, 't_entrada_martes': None, 'preferencia_1': 'BU', 't_entrada_viernes': None, 'hasta': '(-75.59977873751222 6.222686105062644)', 'sugerencias': '', 'edad': 21, 'genero': 'M', 'modo': 'VE', 'gasto': 300000, 't_salida_lunes': 10, 't_salida_jueves': None, 'preferencia_3': 'BU', 'desde': '(-75.6069426 6.2169782)', 'tiempo_trayecto': 50}
+
 
 
