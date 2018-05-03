@@ -27,19 +27,24 @@ class EncuestaForm(forms.ModelForm):
             raise forms.ValidationError(
                 "Los lugares deben ser diferentes")
 
-        entradas = [
-            form_data["t_entrada_lunes"],
-            form_data["t_entrada_martes"],
-            form_data["t_entrada_miercoles"],
-            form_data["t_entrada_jueves"],
-            form_data["t_entrada_viernes"]]
+        try:
+            entradas = [
+                form_data["t_entrada_lunes"],
+                form_data["t_entrada_martes"],
+                form_data["t_entrada_miercoles"],
+                form_data["t_entrada_jueves"],
+                form_data["t_entrada_viernes"]]
 
-        salidas = [
-            form_data["t_salida_lunes"],
-            form_data["t_salida_martes"],
-            form_data["t_salida_miercoles"],
-            form_data["t_salida_jueves"],
-            form_data["t_salida_viernes"]]
+            salidas = [
+                form_data["t_salida_lunes"],
+                form_data["t_salida_martes"],
+                form_data["t_salida_miercoles"],
+                form_data["t_salida_jueves"],
+                form_data["t_salida_viernes"]]
+        except KeyError:
+            raise forms.ValidationError(
+                "Favor solo indicar la hora, ejemplo 10. No 10:15"
+            )
 
         tiempos = zip(entradas, salidas)
         tiempos = [ts for ts in tiempos if all(ts)]
@@ -54,9 +59,9 @@ class EncuestaForm(forms.ModelForm):
                 elif ts[0] < 0 or ts[1] < 0:
                     raise forms.ValidationError(
                         "Hora debe ser menor a 24")
-                elif ts[0] >= ts[1]: \
+                elif ts[0] >= ts[1]:
                     raise forms.ValidationError(
-                        "t debe ser menor a t salida")
+                        "Hora de entrada debe ser menor a la hora de salida, utilizar horario militar 1pm igual a 13")
 
     class Meta:
         model = Encuesta
