@@ -1,7 +1,8 @@
 from django import forms
 from mapwidgets.widgets import GooglePointFieldWidget
 
-from .models import City, Encuesta
+from .models import City, Encuesta, HORAS
+
 
 class CityCreateForm(forms.ModelForm):
 
@@ -47,7 +48,7 @@ class EncuestaForm(forms.ModelForm):
             )
 
         tiempos = zip(entradas, salidas)
-        tiempos = [ts for ts in tiempos if all(ts)]
+        tiempos = [ts for ts in tiempos if isinstance(ts[0], int) and isinstance(ts[1], int)]
         if not tiempos:
             raise forms.ValidationError(
                 "Favor ingresar almenos un horario")
@@ -61,7 +62,7 @@ class EncuestaForm(forms.ModelForm):
                         "Hora debe ser menor a 24")
                 elif ts[0] >= ts[1]:
                     raise forms.ValidationError(
-                        "Hora de entrada debe ser menor a la hora de salida, utilizar horario militar 1pm igual a 13")
+                        "Hora de entrada debe ser menor a la hora de salida")
 
     class Meta:
         model = Encuesta
@@ -89,25 +90,25 @@ class EncuestaForm(forms.ModelForm):
             "correo",
             "sugerencias")
         widgets = {
-            'edad': forms.TextInput(attrs={'placeholder': 'ej. 21'}),
-            'genero': forms.RadioSelect(),
-            'vehiculo': forms.RadioSelect(),
-            'tiempo_trayecto': forms.TextInput(attrs={'placeholder': 'ej. 50'}),
-            'gasto': forms.TextInput(attrs={'placeholder': 'ej. 300000'}),
+            'edad': forms.Select(),
+            'genero': forms.Select(),
+            'vehiculo': forms.Select(),
+            'tiempo_trayecto': forms.Select(),
+            'gasto': forms.Select(),
             'desde': GooglePointFieldWidget,
             'hasta': GooglePointFieldWidget,
-            't_entrada_lunes': forms.TextInput(attrs={'placeholder': 'ej. 7'}),
-            't_salida_lunes': forms.TextInput(attrs={'placeholder': 'ej. 17'}),
-            't_entrada_martes': forms.TextInput(attrs={'placeholder': 'ej. 7'}),
-            't_salida_martes': forms.TextInput(attrs={'placeholder': 'ej. 17'}),
-            't_entrada_miercoles': forms.TextInput(attrs={'placeholder': 'ej. 7'}),
-            't_salida_miercoles': forms.TextInput(attrs={'placeholder': 'ej. 17'}),
-            't_entrada_jueves': forms.TextInput(attrs={'placeholder': 'ej. 7'}),
-            't_salida_jueves': forms.TextInput(attrs={'placeholder': 'ej. 17'}),
-            't_entrada_viernes': forms.TextInput(attrs={'placeholder': 'ej. 7'}),
-            't_salida_viernes': forms.TextInput(attrs={'placeholder': 'ej. 17'}),
-            'preferencia_1': forms.RadioSelect(attrs={'display': 'inline-block'}),
-            'preferencia_2': forms.RadioSelect(attrs={'display': 'inline-block'}),
-            'preferencia_3': forms.RadioSelect(attrs={'display': 'inline-block'}),
+            't_entrada_lunes': forms.Select(),
+            't_salida_lunes': forms.Select(),
+            't_entrada_martes': forms.Select(),
+            't_salida_martes': forms.Select(),
+            't_entrada_miercoles': forms.Select(),
+            't_salida_miercoles': forms.Select(),
+            't_entrada_jueves': forms.Select(),
+            't_salida_jueves': forms.Select(),
+            't_entrada_viernes': forms.Select(),
+            't_salida_viernes': forms.Select(),
+            'preferencia_1': forms.RadioSelect(),
+            'preferencia_2': forms.RadioSelect(),
+            'preferencia_3': forms.RadioSelect(),
             'sugerencias': forms.Textarea(attrs={'placeholder': 'Tu opinion es muy valiosa'}),
         }
